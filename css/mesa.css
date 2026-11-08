@@ -1,0 +1,161 @@
+/* ==== Mesa do Mestre (módulo ms) ==== */
+.ms-sub { color: var(--m); margin: 4px 0 8px; }
+.ms-h3 { font: 400 22px Anton, sans-serif; letter-spacing: .05em; text-transform: uppercase; margin: 24px 0 6px; padding-bottom: 4px; border-bottom: 2px solid var(--r); }
+.ms-h3 small { font: 400 13px "Courier Prime", monospace; letter-spacing: 0; margin-left: 6px; }
+
+/* Barra de turno: fica visível enquanto o Mestre rola a lista de sobreviventes. */
+.ms-bar { position: sticky; top: var(--ms-top, 50px); z-index: 8; margin: 0 -16px 12px; padding: 8px 16px 10px; background: var(--bg); border-bottom: 2px solid var(--r); box-shadow: 0 8px 14px rgba(0, 0, 0, .6); }
+.ms-bar-i { display: flex; align-items: center; gap: 6px 14px; flex-wrap: wrap; }
+.ms-rod { font: 400 20px Anton, sans-serif; letter-spacing: .04em; text-transform: uppercase; color: var(--rt); white-space: nowrap; }
+.ms-vez { flex: 1 1 140px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-bar-b { display: flex; gap: 8px; margin-left: auto; }
+.ms-bar-b button { min-height: 44px; font-size: 16px; padding: 6px 16px; }
+
+/* Cartão do encontro e distintivos de estado. */
+.ms-enc.live { border-left-color: var(--r); }
+.ms-bd { display: inline-block; padding: 1px 8px; border: 1px solid var(--m); border-radius: 3px; font-size: 12px; letter-spacing: .04em; color: var(--m); white-space: nowrap; }
+.ms-bd.bad { border-color: var(--r); color: var(--rt); }
+.ms-bd.ok { border-color: #2faa4e; color: #2faa4e; }
+.ms-bd.vez { background: var(--r); border-color: var(--r); color: #fff; }
+.ms-bd.dead { background: #000; border-color: var(--r); color: var(--rt); }
+.ms-line { margin: 6px 0; }
+.ms-tg.on { background: var(--r); border-color: var(--r); color: #fff; }
+.ms-two { display: grid; gap: 10px 16px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin: 10px 0; }
+.ms-enc .cnt b, .ms-ass .cnt b { font-size: 34px; min-width: 52px; }
+.ms-enc .cnt b em, .ms-ass .cnt b em { font-size: 14px; }
+.ms-alert { margin: 10px 0; padding: 8px 10px; border: 1px solid var(--r); border-left: 4px solid var(--r); border-radius: 4px; background: var(--bg); }
+.ms-alert.ok { border-color: #2faa4e; }
+.ms-alert > b { display: block; margin-bottom: 4px; }
+.ms-alert .item:last-child { border-bottom: 0; }
+.ms-alert .row { flex-wrap: nowrap; }
+.ms-res { margin: 10px 0 0; padding: 10px 12px; border: 1px dashed var(--m); border-radius: 4px; background: var(--bg); }
+.ms-res ul { margin: 6px 0; padding-left: 20px; }
+
+/* Faixa de iniciativa. */
+.ms-ini { display: flex; gap: 6px; overflow-x: auto; padding: 4px 0 8px; -webkit-overflow-scrolling: touch; }
+.ms-tok { flex: none; display: flex; flex-direction: column; align-items: center; min-width: 84px; max-width: 120px; min-height: 52px; padding: 6px 8px; background: var(--bg); color: var(--t); border: 1px solid var(--l); border-top: 3px solid var(--c, var(--m)); border-radius: 4px; cursor: pointer; font: inherit; font-size: 13px; line-height: 1.25; }
+.ms-tok i { font: 400 16px Anton, sans-serif; font-style: normal; }
+.ms-tok span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-tok small { font-size: 11px; color: inherit; opacity: .8; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-tok:hover { border-color: var(--m); }
+.ms-tok.on { background: var(--r); border-color: var(--r); color: #fff; }
+.ms-tok.off { opacity: .45; }
+.ms-tok.off span { text-decoration: line-through; }
+
+/* Assassino. */
+.ms-ass.vez { box-shadow: 0 0 0 1px var(--r), 0 0 18px rgba(209, 18, 31, .35); }
+.ms-ass-g { display: grid; gap: 10px 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.ms-pass { margin: 8px 0 0; font-size: 14px; }
+
+/* Ações disponíveis. */
+.ms-sw { display: flex; gap: 6px; }
+.ms-sw button.on, .ms-ch.on { background: var(--r); border-color: var(--r); color: #fff; }
+.ms-chs { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.ms-ch { font: inherit; font-size: 14px; min-height: 40px; padding: 6px 12px; background: var(--bg); color: var(--t); border: 1px solid var(--m); border-radius: 18px; cursor: pointer; }
+.ms-ch small { color: inherit; opacity: .8; margin-left: 4px; }
+.ms-ch:hover { border-color: var(--t); }
+.ms-ac .gl-t { margin: 8px 0; }
+
+/* Cartão de sobrevivente. */
+.sobr.ms-card { margin: 10px 0; padding: 10px; background: var(--p); border: 1px solid var(--l); border-left: 4px solid var(--c, var(--m)); border-radius: 4px; }
+.ms-card.vez { border-color: var(--r); border-left-color: var(--r); box-shadow: 0 0 0 1px var(--r), 0 0 18px rgba(209, 18, 31, .35); }
+.ms-card.is-esc { opacity: .72; }
+.ms-card.is-dead { opacity: .6; border-left-color: #000; }
+.ms-card.is-dead .ms-nm { text-decoration: line-through; }
+.ms-hd { display: flex; align-items: center; gap: 6px 10px; flex-wrap: wrap; }
+.ms-who { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; flex: 1 1 200px; min-width: 0; }
+.ms-ord { display: inline-flex; align-items: center; justify-content: center; min-width: 26px; height: 26px; padding: 0 6px; background: var(--bg); border: 1px solid var(--m); border-radius: 13px; font: 400 14px Anton, sans-serif; }
+.ms-nm { font: 400 20px Anton, sans-serif; letter-spacing: .03em; text-transform: uppercase; overflow-wrap: anywhere; }
+.ms-bds { display: flex; flex-wrap: wrap; gap: 4px; }
+.ms-ex { min-height: 36px; }
+.ms-card .sgrid { grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); }
+.ms-card .sst .bar { margin-top: 4px; height: 8px; }
+.ms-card .sst small { display: block; font-size: 11px; }
+.ms-acts { margin-top: 8px; }
+.ms-acts button { min-height: 40px; }
+
+/* Condições e habilidades. */
+.ms-conds { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.ms-cd { padding: 6px 8px; background: var(--bg); border: 1px solid var(--l); border-left: 4px solid var(--c, var(--r)); border-radius: 4px; }
+.ms-cdh { display: flex; align-items: center; gap: 6px 10px; flex-wrap: wrap; }
+.ms-cdh > b { font: 400 16px Anton, sans-serif; letter-spacing: .03em; text-transform: uppercase; }
+.ms-cd small { display: block; margin-top: 2px; line-height: 1.35; }
+.ms-cv { display: inline-flex; align-items: center; gap: 6px; }
+.ms-cv b { font: 400 22px Anton, sans-serif; min-width: 22px; text-align: center; }
+.ms-cv button { width: 34px; height: 34px; padding: 0; font-size: 18px; }
+.ms-x { margin-left: auto; width: 34px; height: 34px; padding: 0; font: inherit; font-size: 20px; line-height: 1; background: none; color: var(--m); border: 1px solid var(--l); border-radius: 3px; cursor: pointer; }
+.ms-x:hover { color: #fff; background: var(--r); border-color: var(--r); }
+select.ms-mini, input.ms-mini { width: auto; min-width: 140px; max-width: 100%; flex: 1 1 140px; font-size: 14px; padding: 6px 8px; }
+select.ms-add { align-self: flex-start; flex: 0 0 auto; min-height: 36px; color: var(--m); }
+.ms-habs { margin-top: 8px; }
+.ms-habs > div { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.ms-hb { font: inherit; font-size: 14px; min-height: 36px; padding: 4px 10px; background: var(--bg); color: var(--t); border: 1px solid var(--m); border-radius: 18px; cursor: pointer; }
+.ms-hb small { color: var(--m); }
+.ms-hb.used { opacity: .5; text-decoration: line-through; border-style: dashed; }
+.ms-hb.passive { cursor: default; border-color: var(--l); color: var(--m); display: inline-flex; align-items: center; }
+.ms-det { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--l); }
+.ms-det .row { margin-top: 4px; }
+.ms-hl { display: flex; align-items: flex-start; gap: 8px; padding: 6px 0; border-bottom: 1px dashed var(--l); }
+.ms-hl > div { flex: 1; min-width: 0; }
+.ms-empty { padding: 16px; border: 1px dashed var(--l); color: var(--m); text-align: center; }
+.ms-foot { margin-top: 18px; padding-top: 12px; border-top: 1px dashed var(--l); }
+
+/* Gaveta de consulta rápida (usa os cartões e tabelas do Glossário). */
+.ms-fab { position: fixed; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 40; min-height: 48px; padding: 8px 18px; border-radius: 24px; font-size: 16px; box-shadow: 0 4px 14px rgba(0, 0, 0, .7); }
+.ms-fab[hidden], .ms-dr-ov[hidden] { display: none; }
+.ms-dr-ov { position: fixed; inset: 0; z-index: 90; background: rgba(0, 0, 0, .65); display: flex; justify-content: flex-end; }
+.ms-dr { width: min(520px, 100%); height: 100%; overflow-y: auto; padding: 14px 14px calc(18px + env(safe-area-inset-bottom, 0px)); background: var(--bg); border-left: 3px solid var(--r); -webkit-overflow-scrolling: touch; }
+.ms-dr-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+.ms-dr-h h3 { margin: 0; }
+.ms-dr #ms-q { font-size: 16px; padding: 10px 12px; }
+.ms-dr .gl-chips { margin: 8px 0 10px; }
+.ms-res-l { display: grid; gap: 10px; }
+.ms-res-l .gl-t { margin: 0; }
+.ms-h4 { font: 400 16px Anton, sans-serif; letter-spacing: .05em; text-transform: uppercase; margin: 14px 0 4px; }
+
+@media (max-width: 700px) {
+  .ms-dr-ov { align-items: flex-end; }
+  .ms-dr { height: 88vh; border-left: 0; border-top: 3px solid var(--r); border-radius: 10px 10px 0 0; }
+  .ms-sub { display: none; }
+  .ms-lg { display: none; }
+  .ms-bar-b button { padding: 6px 12px; white-space: nowrap; }
+  .ms-rod { font-size: 17px; }
+  .ms-ch { flex: 0 1 auto; }
+  .ms-dr .gl-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  .ms-dr .gl-chip { flex: none; white-space: nowrap; }
+}
+
+/* Fluxos do Assassino e resolução das sobreviventes. */
+.ms-big { font: 400 30px Anton, sans-serif; }
+.ms-quem { margin: 14px 0 6px; }
+.ms-list { display: flex; flex-direction: column; }
+.ms-list > .item { gap: 8px 12px; flex-wrap: wrap; }
+.ms-list > .item > span:first-child { flex: 1 1 220px; min-width: 0; }
+.item.ms-col { flex-direction: column; align-items: stretch; }
+.ms-res .item { flex-wrap: wrap; gap: 6px 10px; }
+.ms-res .row { flex-wrap: wrap; }
+.ms-alert small { display: block; margin: 2px 0 6px; }
+.ms-int { margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--l); }
+.ms-int > summary { cursor: pointer; min-height: 40px; display: flex; align-items: center; font-weight: 700; }
+.ms-int .item { flex-wrap: wrap; gap: 6px 10px; }
+.ms-tg.on, .b.on { background: var(--r); border-color: var(--r); color: #fff; }
+.ms-res .sst { min-width: 110px; }
+
+/* Dados 3D das rolagens da Mesa (reaproveitam .d3 do site). */
+.ms-dtray { display: flex; justify-content: center; margin: 4px 0 0; }
+.ms-sd { display: inline-block; vertical-align: middle; margin: 0 10px; }
+.ms-sd .d3 { display: inline-block; }
+.ms-sd .d3 .cube { margin-bottom: 0; }
+.ms-man { color: var(--rt); }
+.ms-man { display: block; margin-top: 2px; color: var(--rt); }
+.ms-lem { margin-top: 12px; padding: 10px 14px; }
+.ms-lem summary { cursor: pointer; }
+.ms-lem ul { margin: 8px 0 0; padding-left: 18px; }
+.ms-lem li { margin: 5px 0; font-size: 14px; }
+.ms-vezov { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.62); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); animation: msvz .22s ease-out; pointer-events: none; padding: 16px; }
+.ms-vezov.out { opacity: 0; transition: opacity .25s; }
+.ms-vezov-i { text-align: center; max-width: 100%; }
+.ms-vezov-i small { display: block; font-size: clamp(14px, 3.2vw, 22px); letter-spacing: .2em; text-transform: uppercase; color: #ddd; margin-bottom: 10px; }
+.ms-vezov-i b { display: block; font-size: clamp(40px, 12vw, 120px); line-height: 1.05; color: var(--c, #fff); text-shadow: 0 0 28px var(--c, #fff), 0 4px 18px #000; word-break: break-word; }
+@keyframes msvz { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ms-vezov { animation: none; } }

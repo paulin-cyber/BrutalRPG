@@ -1,0 +1,40 @@
+.gl-search input[type=search]::-webkit-search-cancel-button,.gl-search input[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
+/* ==== Glossário e consulta rápida (módulo gl) ==== */
+.gl-sub { color: var(--m); margin: 4px 0 12px; }
+.gl-bar { position: sticky; top: var(--gl-top, 48px); z-index: 8; background: var(--bg); padding: 10px 0 8px; border-bottom: 1px solid var(--l); margin-bottom: 12px; }
+.gl-lab { display: block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--m); margin-bottom: 4px; }
+.gl-row { display: flex; gap: 8px; }
+.gl-row input { flex: 1; min-width: 0; font-size: 16px; padding: 10px 12px; }
+.gl-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.gl-chip { font: inherit; font-size: 13px; padding: 5px 10px; background: var(--p); color: var(--m); border: 1px solid var(--l); border-radius: 14px; cursor: pointer; }
+.gl-chip small { opacity: .7; margin-left: 2px; }
+.gl-chip:hover { color: var(--t); border-color: var(--m); }
+.gl-chip.on { background: var(--r); border-color: var(--r); color: #fff; }
+.gl-cnt { margin-top: 6px; font-size: 12px; color: var(--m); }
+.gl-sec h3 { font: 400 20px Anton, sans-serif; letter-spacing: .05em; text-transform: uppercase; margin: 20px 0 8px; padding-bottom: 4px; border-bottom: 2px solid var(--r); scroll-margin-top: calc(var(--gl-top, 48px) + 150px); }
+.gl-sec h3 small { font: 400 13px "Courier Prime", monospace; color: var(--m); margin-left: 6px; letter-spacing: 0; }
+#gl-res { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 10px; align-items: start; }
+#gl-res .gl-sec { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 10px; align-items: start; }
+#gl-res .gl-sec > h3 { grid-column: 1 / -1; }
+#gl-res .gl-none { grid-column: 1 / -1; }
+.gl-t { padding: 10px 12px; background: var(--p); border: 1px solid var(--l); border-left: 3px solid var(--r); border-radius: 4px; }
+.gl-th { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; }
+.gl-t h4 { margin: 0; font: 400 17px Anton, sans-serif; letter-spacing: .03em; text-transform: uppercase; }
+.gl-tag, .gl-cat { font-size: 11px; letter-spacing: .05em; padding: 1px 6px; border: 1px solid var(--m); border-radius: 3px; color: var(--m); }
+.gl-cat { border-color: var(--r); color: var(--rt); }
+.gl-t p { margin: 6px 0 0; line-height: 1.45; }
+.gl-v { margin-top: 8px; font-size: 12px; color: var(--m); display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.gl-ref { font: inherit; font-size: 12px; padding: 1px 7px; background: none; color: var(--rt); border: 1px solid var(--l); border-radius: 10px; cursor: pointer; }
+.gl-ref:hover { border-color: var(--r); color: var(--t); }
+.gl-none { padding: 14px; border: 1px dashed var(--l); color: var(--m); }
+.gl-h3 { font: 400 22px Anton, sans-serif; letter-spacing: .05em; text-transform: uppercase; margin: 28px 0 8px; }
+.gl-ini { margin: 4px 0; padding-left: 22px; columns: 2; }
+.gl-note { margin: 8px 0 0; font-size: 13px; color: var(--m); }
+.gl input[type="search"] { background: var(--p); color: var(--t); border: 1px solid var(--l); border-radius: 4px; }
+.gl input[type="search"]:focus { outline: 2px solid var(--r); outline-offset: 1px; }
+@media (max-width: 700px) {
+  .gl-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+  .gl-chip { flex: none; white-space: nowrap; }
+  .gl-ini { columns: 1; }
+  .gl-sub { display: none; }
+}

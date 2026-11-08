@@ -1,0 +1,6 @@
+.cf-ov { position: fixed; inset: 0; z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0, 0, 0, .78); }
+.cf-box { width: 100%; max-width: 440px; max-height: 90vh; overflow: auto; padding: 18px 18px 16px; background: var(--p); color: var(--t); border: 1px solid var(--l); border-top: 4px solid var(--r); border-radius: 4px; box-shadow: 0 10px 40px rgba(0, 0, 0, .7); }
+.cf-box h3 { margin: 0 0 8px; font: 400 22px Anton, sans-serif; letter-spacing: .05em; text-transform: uppercase; }
+.cf-box p { margin: 0 0 8px; line-height: 1.45; }
+.cf-box .cf-warn { color: var(--rt); }
+.cf-btns { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; margin-top: 14px; }
